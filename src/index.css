@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+*{
+ color: white;
+ font-family: "Saira", sans-serif;
+  font-optical-sizing: auto;
+}
+
+p{
+  word-wrap: anywhere;
+}
