@@ -93,7 +93,7 @@ const MainPage = () => {
 
             <h1 className='text-white text-center text-5xl font-bold  p-4'>TO DO LIST</h1>
 
-            <div className='text-white flex justify-center items-center pt-6 gap-3'>
+            <div className='text-white sticky top-0 bg-black flex justify-center items-center pt-6 gap-3'>
                 <input type="text"
                     onChange={handelTyping}
                     onKeyDown={addDataKey}
