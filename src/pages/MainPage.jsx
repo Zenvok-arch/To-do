@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Todolist from "./Todolist";
+import addbtn from '../assets/Add.png'
+import updatebtn from '../assets/Update.png'
+
+
 
 const MainPage = () => {
     const [todo, setTodo] = useState(()=>{
@@ -9,6 +13,7 @@ const MainPage = () => {
     });
     const [value, setValue] = useState("");
     const [editingId, setEditingId] = useState(null);
+
    
 
      
@@ -36,7 +41,8 @@ const MainPage = () => {
             setTodo(prev => [...prev, {
             id: nanoid(),
             text: value,
-            completed: false
+            completed: false,
+        
         }])
 
         setValue('')
@@ -71,6 +77,7 @@ const MainPage = () => {
         if(!foundTodo) return;
           setValue(foundTodo.text)
           setEditingId(id)
+          
     }
 
      // checkbox logic
@@ -93,7 +100,7 @@ const MainPage = () => {
 
 
 
-            <h1 className='text-white text-center text-5xl font-bold  p-4'>TO DO LIST</h1>
+            <h1 className='text-white text-center md:text-4xl text-3xl mt-5 font-bold  p-4'>TO DO LIST</h1>
 
             <div className='text-white sticky top-0 bg-black flex justify-center items-center pt-6 gap-3'>
                 <input type="text"
@@ -101,10 +108,10 @@ const MainPage = () => {
                     onKeyDown={addDataKey}
                     value={value}
                     placeholder="Enter Your Task"
-                    className=' bg-gray-300 \ w-1/2 p-2 placeholder:text-gray-400! font-bold text-black! ' />
+                    className=' bg-gray-300 md:w-1/2 w-[65%] p-2 placeholder:text-gray-400! font-bold text-black! ' />
                 <button
                     onClick={handelAdd}
-                    className='bg-[#6633eebf] p-2  font-medium'>{editingId ? "UPDATE" : "ADD"}</button>
+                    className='bg-[#6633eebf] p-2 imgbnt  rounded font-medium'>{editingId ? <img src={updatebtn} alt="Update Button" /> :<img src={addbtn} alt="Add button"/> }</button>
             </div>
 
             <div>
