@@ -11,5 +11,17 @@ p{
 }
 
 .imgbnt{
-  width: 42px;
+  width: 30px;
+}
+
+.tbtn{
+  background-color: #6533ee39;
+  padding: 4px 6px;
+  border-radius: 10px;
+}
+ 
+.activebtn{
+  background-color: #6533ee9a;
+  padding: 4px 6px;
+  border-radius: 20%;
 }

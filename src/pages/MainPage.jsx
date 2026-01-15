@@ -13,6 +13,13 @@ const MainPage = () => {
     });
     const [value, setValue] = useState("");
     const [editingId, setEditingId] = useState(null);
+    const [filter, setFilter] = useState("all")
+
+    const filteredTodos = todo.filter(item => {
+        if(filter=== 'active') return !item.completed;
+        if(filter === 'completed') return item.completed;
+        return true;
+    })
 
    
 
@@ -111,12 +118,15 @@ const MainPage = () => {
                     className=' bg-gray-300 md:w-1/2 w-[65%] p-2 placeholder:text-gray-400! font-bold text-black! ' />
                 <button
                     onClick={handelAdd}
-                    className='bg-[#6633eebf] p-2 imgbnt  rounded font-medium'>{editingId ? <img src={updatebtn} alt="Update Button" /> :<img src={addbtn} alt="Add button"/> }</button>
+                    className='bg-[#6633eebf] w-10 p-2   rounded font-medium'>{editingId ? <img src={updatebtn} alt="Update Button" /> :<img  src={addbtn} alt="Add button"/> }</button>
             </div>
 
             <div>
                 <h2 className='text-2xl font-medium pt-8 text-center  mb-4'>TASK LIST</h2>
-                <Todolist todo={todo} handelChecked={handelChecked} handelEdit={handelEdit} handelDelete={handelDelete} />
+                
+                <Todolist todo={filteredTodos} handelChecked={handelChecked} handelEdit={handelEdit} handelDelete={handelDelete}
+                setFilter={setFilter}
+                 />
             </div>
 
 
