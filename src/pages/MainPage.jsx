@@ -126,6 +126,7 @@ const MainPage = () => {
                 
                 <Todolist todo={filteredTodos} handelChecked={handelChecked} handelEdit={handelEdit} handelDelete={handelDelete}
                 setFilter={setFilter}
+                filter={filter}
                  />
             </div>
 

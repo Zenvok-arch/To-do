@@ -23,5 +23,6 @@ p{
 .activebtn{
   background-color: #6533ee9a;
   padding: 4px 6px;
-  border-radius: 20%;
+  border-radius: 4px;
+  transition: all  ease-out 0.2s ;
 }

@@ -1,8 +1,12 @@
+
 import deletebtn from '../assets/Delete.png'
 import editbtn from '../assets/Edit.png'
 
-const Todolist = ({ todo, handelChecked, handelDelete, handelEdit,setFilter }) => {
+const Todolist = ({ todo, handelChecked, handelDelete, handelEdit,setFilter , filter }) => {
  
+ const activeButton=(active)=>{
+  return filter===(active) ? "activebtn" : ''
+}
   
      
 
@@ -10,9 +14,9 @@ const Todolist = ({ todo, handelChecked, handelDelete, handelEdit,setFilter }) =
         <div>
 
             <div className='Todo-Tabs tbtn w-[70%] mx-auto flex justify-around font-medium  text-[16px]'>
-                <button onClick={()=>setFilter('all')}><span>All</span></button>
-                <button onClick={()=>setFilter('active')} ><span>Active</span></button>
-                <button onClick={()=>setFilter('completed')}><span>Completed</span></button>
+                <button className={activeButton('all')} onClick={()=>setFilter('all')}><span>All</span></button>
+                <button className={activeButton("active")} onClick={()=>setFilter('active')} ><span>Active</span></button>
+                <button className={activeButton('completed')} onClick={()=>setFilter('completed')}><span>Completed</span></button>
 
             </div>
 
